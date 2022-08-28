@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Crime information</title>
+      <link rel="stylesheet" href="/static/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/styles.css">
+      <link rel="stylesheet" href="/static/w3.css">
+   
+   </head>
+
+   <style>
+       h1 {color:MediumSeaGreen;
+           font-size: 8em;
+           text-align: center;
+       }
+       h2.map {color:MediumSeaGreen;
+           font-size: 60;
+           text-align: center;
+       }
+
+       h2.map.a {text-align: center;}
+
+       h2.stats {color:MediumSeaGreen;
+           font-size: 100;
+           text-align: center;
+       }
+
+       h2.stats.a {text-align: center;}
+   </style>
+
+   <body>
+      <br><br>
+      <h1><b>Better Safety</b></h1>
+      <br><br>
+      <h2 class='stats' style="text-align:center;color:navy;">Crime map in your location</h2>
+      <p align="center"><iframe class="map", src="static/crimemap.html" width="1100" height="600"></iframe></p>
+      <br><br>
+      <h2 class='stats' style="text-align:center;color:navy;">Compare your location with the city</h2>
+      <p align="center"><iframe class="map", src="static/crime_count.html" width="1300" height="590"></iframe></p>
+      <br><br>
+      <h2 class='stats' style="text-align:center;color:navy;">Crime by day</h2>
+      <p align="center"><iframe class="map", src="static/dayofweek.jpg" width="800" height="590"></iframe></p>
+      <br><br>
+      <h2 class='stats' style="text-align:center;color:navy;">Crime by hour</h2>
+      <p align="center"><iframe class="map", src="static/crimebyhour.html" width="1050" height="620"></iframe></p>
+      <br><br>
+      <br><br>
+      <h2><a href="static/result2.html" style="text-align:center;color:MediumSeaGreen;font-size:85px"><center><u><b>Predict future crime</b></u></center></a>
+      <p style="text-align:center;font-size:100px">&#128373</p>
+      <br></br>
+      <br></br> 
+      </h2>
+      <br><br>
+      <br><br>
+      <br><br>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/static/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/bootstrap.min.js"></script>
+
+   </body>
+</html>

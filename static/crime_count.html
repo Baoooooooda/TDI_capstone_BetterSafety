@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"layer": [{"mark": "bar", "encoding": {"x": {"axis": {"labelFontSize": 20, "title": "Total crime number (within 3 miles)", "titleFontSize": 20}, "field": "local", "type": "quantitative"}, "y": {"axis": {"labelFontSize": 16, "labelLimit": 2300, "labelPadding": 5, "title": "Offense type", "titleFontSize": 22, "titlePadding": 140}, "field": "offense", "sort": "-x", "type": "ordinal"}}, "selection": {"selector001": {"type": "single"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 3, "fontSize": 16, "fontWeight": "bold"}, "encoding": {"text": {"field": "percentage", "type": "ordinal"}, "x": {"axis": {"labelFontSize": 20, "title": "Total crime number (within 3 miles)", "titleFontSize": 20}, "field": "local", "type": "quantitative"}, "y": {"axis": {"labelFontSize": 16, "labelLimit": 2300, "labelPadding": 5, "title": "Offense type", "titleFontSize": 22, "titlePadding": 140}, "field": "offense", "sort": "-x", "type": "ordinal"}}}], "encoding": {"color": {"condition": {"value": "blue", "selection": "selector001"}, "value": "lightgray"}}, "height": 500, "width": 400}, {"mark": "bar", "encoding": {"color": {"condition": {"value": "blue", "selection": "selector001"}, "value": "lightgray"}, "x": {"axis": {"labelFontSize": 20, "title": "Total crime number (citywide)", "titleFontSize": 20}, "field": "citytotal", "type": "quantitative"}, "y": {"axis": {"labelFontSize": 16, "labels": true, "title": ""}, "field": "offense", "sort": "-x", "type": "ordinal"}}, "height": 500, "selection": {"selector001": {"type": "single"}}, "width": 400}], "data": {"name": "data-505155342cebbe66d8729349fdf725c4"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-505155342cebbe66d8729349fdf725c4": [{"offense": "Motor Vehicle Theft", "citytotal": 93, "local": 42.0, "percentage": "45.2%"}, {"offense": "Simple Assault", "citytotal": 66, "local": 29.0, "percentage": "43.9%"}, {"offense": "Aggravated Assault", "citytotal": 43, "local": 21.0, "percentage": "48.8%"}, {"offense": "Destruction/Damage/Vandalism of Property", "citytotal": 31, "local": 16.0, "percentage": "51.6%"}, {"offense": "Burglary/Breaking & Entering", "citytotal": 25, "local": 14.0, "percentage": "56.0%"}, {"offense": "Theft of Motor Vehicle Parts or Accessories", "citytotal": 38, "local": 14.0, "percentage": "36.8%"}, {"offense": "Intimidation", "citytotal": 28, "local": 11.0, "percentage": "39.3%"}, {"offense": "Robbery", "citytotal": 25, "local": 10.0, "percentage": "40.0%"}, {"offense": "All Other Larceny", "citytotal": 15, "local": 9.0, "percentage": "60.0%"}, {"offense": "Theft From Motor Vehicle", "citytotal": 14, "local": 7.0, "percentage": "50.0%"}, {"offense": "Drug/Narcotic Violations", "citytotal": 9, "local": 7.0, "percentage": "77.8%"}, {"offense": "Trespass of Real Property", "citytotal": 8, "local": 6.0, "percentage": "75.0%"}, {"offense": "Weapon Law Violations", "citytotal": 8, "local": 6.0, "percentage": "75.0%"}, {"offense": "Stolen Property Offenses", "citytotal": 8, "local": 5.0, "percentage": "62.5%"}, {"offense": "Theft From Building", "citytotal": 8, "local": 4.0, "percentage": "50.0%"}, {"offense": "Shoplifting", "citytotal": 11, "local": 3.0, "percentage": "27.3%"}, {"offense": "Identity Theft", "citytotal": 3, "local": 1.0, "percentage": "33.3%"}, {"offense": "Arson", "citytotal": 2, "local": 1.0, "percentage": "50.0%"}, {"offense": "Impersonation", "citytotal": 1, "local": 0.0, "percentage": "0.0%"}, {"offense": "False Pretenses/Swindle/Confidence Game", "citytotal": 1, "local": 0.0, "percentage": "0.0%"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

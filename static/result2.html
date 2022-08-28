@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Crime information</title>
+      <link rel="stylesheet" href="/static/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/styles.css">
+      <link rel="stylesheet" href="/static/w3.css">
+   
+   </head>
+
+   <style>
+       h1 {color:MediumSeaGreen;
+           font-size: 8em;
+           text-align: center;
+       }
+       h2.map {color:MediumSeaGreen;
+           font-size: 60;
+           text-align: center;
+       }
+
+       h2.map.a {text-align: center;}
+
+       h2.stats {color:MediumSeaGreen;
+           font-size: 70;
+           text-align: center;
+       }
+
+       h2.stats.a {text-align: center;}
+   </style>
+
+   <body>
+      <br><br>
+      <h1><b>Better Safety</b></h1>
+      <br><br>
+      <p align="center"><img src="/static/prediction_day.jpg" alt="day_prediction"></p>
+      <br><br>
+      <p align="center"><img src="/static/prediction_week.jpg" alt="week_prediction"></p>
+      <br><br>
+      <p align="center"><img src="/static/model.jpg" alt="model"></p>
+      <br><br>
+      <br><br>
+      <h2><a href="#" id="joinToggle" data-toggle="modal" data-target="#joinModal" style="text-align:center;color:MediumSeaGreen;font-size:100px;"><center><u><b>Get more information</b></u></center></a></h2>
+     <p align="center"><a href="/static/Thanks.html">Thank you!</a></p>
+      <br><br>
+      <br><br>
+      <br><br>
+
+    <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Learn more about the criminal information</h4>
+           </div>
+           <div class="modal-body">
+             <div class="form-group">
+                 <form method="post" action="/sendemail" id="sendemail">
+                     <b><font color="black">Email:</font></b>
+                     <input type="text" name="email"/>
+                     <br>
+                     <br>
+                     <b><font color="black">Address:</font></b>
+                     <input type="text" name="address"/>
+                     <br>
+                     <br>
+                     <b><font color="black">Use location for:</font></b>
+                     <select id="location_for" name="location_for" style="width: 150px">
+                         <option value=""></option>
+                         <option value="business">Business</option>
+                         <option value="housing">Housing</option>
+                         <option value="traveling">Traveling</option>
+                     </select>
+                     <br>
+                     <br>
+                     <b><font color="black">Pronouns</font></b>
+                     <select id="pronouns" name="pronouns" style="width: 150px">
+                         <option value=""></option>
+                         <option value="he">he/him/his</option>
+                         <option value="she">she/her/her</option>
+                         <option value="they">they/them/their</option>
+                         <option value="none_pronouns">Prefer not to reply</option>
+                     </select>
+                     <br>
+                     <br>
+                     <b><font color="black">Age:</font></b>
+                     <select id="age" name="age" style="width: 150px">
+                         <option value=""></option>
+                         <option value="less10"><10</option>
+                         <option value="10_25">10-24</option>
+                         <option value="25_35">25-34</option>
+                         <option value="35_45">35-44</option>
+                         <option value="45_60">45-59</option>
+                         <option value="60_75">60-74</option>
+                         <option value="75more">75+</option>
+                         <option value="none_age">Prefer not to reply</option>
+                     </select>
+                     <br>
+                     <br>
+                     <button type="submit" name="submit" value="client_submit"i style="float:right;">Submit</button>
+                     <br>
+                 </form>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/static/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/bootstrap.min.js"></script>
+
+   </body>
+</html>
